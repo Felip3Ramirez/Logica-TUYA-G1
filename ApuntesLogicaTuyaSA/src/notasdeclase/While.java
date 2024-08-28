@@ -2,18 +2,21 @@ package notasdeclase;
 
 import java.util.Scanner;
 
+
 public class While {
+    static String hola;
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
         System.out.println("precione 1 para inicializar");
         int iniciar = in.nextInt();
 
+        String userRegi = "";
+        int claveRegi = 0;
+
+
         while (iniciar!=0){
-            System.out.println("algo");
-
-
-
             System.out.println("Seleccione 1. para crear un usuario");
             System.out.println("Seleccione 2. para iniciar sesion");
             System.out.println("Seleccione 3. para calcular el salario");
@@ -22,28 +25,48 @@ public class While {
             System.out.println("Seleccione 6. para salir");
             int opc = in.nextInt();
 
-
             switch (opc){
                 case 1 :
                     System.out.println("crear usuario");
+                    System.out.println("Ingresa Usuario");
+                    userRegi = in.next();
+                    System.out.println("Ingresa Clave");
+                    claveRegi = in.nextInt();
                     break;
 
                 case 2:
                     System.out.println("login");
+                    System.out.println("usuario");
+                    String usuario = in.next();
+                    System.out.println("clave");
+                    int clave = in.nextInt();
+
+                    if(userRegi.equals(usuario) && claveRegi==clave){
+                        System.out.println("Bienvenido "+userRegi);
+                    }else {
+                        System.out.println("valida credenciales");
+                    }
                     break;
                 case 3:
                     System.out.println("calcular salario");
+                    System.out.println("Ingrese salario de "+userRegi);
+                    double salario = in.nextDouble();
+                    if (salario<2600000){
+                        salario=(salario-8/100);
+                        System.out.println(salario);
+                    }
                     break;
                 case 4:
                     System.out.println("validar categoria de salario");
                     break;
                 case 5:
-                    System.out.println("ver datoa de usuario");
+                    System.out.println("ver datos de usuario");
                     break;
 
                 case 6:
                     System.out.println("Salir");
                     iniciar = 0;
+                    break;
 
                 default:
                     break;
