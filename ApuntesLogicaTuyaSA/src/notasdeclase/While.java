@@ -50,11 +50,19 @@ public class While {
                 case 3:
                     System.out.println("calcular salario");
                     System.out.println("Ingrese salario de "+userRegi);
-                    double salario = in.nextDouble();
+                    double salario = in.nextInt();
+                    double descSalud = salario*0.04;
+                    double descPension = salario*0.04;
+                    int auxtransporte = 100000;
+                    double salarioNeto = 0;
                     if (salario<2600000){
-                        salario=(salario-8/100);
-                        System.out.println(salario);
-                    }
+                        salarioNeto = salario-descPension-descSalud+auxtransporte;
+                        System.out.println(salarioNeto);
+                    } else if (salario>2600000){
+                    salarioNeto = salario-descPension-descSalud;
+                    System.out.println(salarioNeto);
+
+                }
                     break;
                 case 4:
                     System.out.println("validar categoria de salario");
