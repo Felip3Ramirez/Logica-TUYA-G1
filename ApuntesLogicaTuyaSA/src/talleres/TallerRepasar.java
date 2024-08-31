@@ -1,9 +1,9 @@
-package notasdeclase;
+package talleres;
 
 import java.util.Scanner;
 
 
-public class While {
+public class TallerRepasar {
     static String hola;
 
     public static void main(String[] args) {
@@ -14,6 +14,11 @@ public class While {
 
         String userRegi = "";
         int claveRegi = 0;
+
+        double salario = 0;
+        double salarioNeto = 0;
+
+        String categoria ="";
 
 
         while (iniciar!=0){
@@ -32,6 +37,7 @@ public class While {
                     userRegi = in.next();
                     System.out.println("Ingresa Clave");
                     claveRegi = in.nextInt();
+                    
                     break;
 
                 case 2:
@@ -50,25 +56,48 @@ public class While {
                 case 3:
                     System.out.println("calcular salario");
                     System.out.println("Ingrese salario de "+userRegi);
-                    double salario = in.nextInt();
+                    salario = in.nextInt();
                     double descSalud = salario*0.04;
                     double descPension = salario*0.04;
                     int auxtransporte = 100000;
-                    double salarioNeto = 0;
                     if (salario<2600000){
                         salarioNeto = salario-descPension-descSalud+auxtransporte;
-                        System.out.println(salarioNeto);
+                        System.out.println(
+                                "Salario de :"+userRegi+"\n"+
+                                "Descuento de Salud :"+descSalud+"\n"+
+                                "Descuento Pension :"+descPension+"\n"+
+                                "Auxuilio de Transporte :"+auxtransporte+"\n"+
+                                "Salario :"+salarioNeto);
                     } else if (salario>2600000){
                     salarioNeto = salario-descPension-descSalud;
-                    System.out.println(salarioNeto);
+                        System.out.println(
+                                "Salario de :"+userRegi+"\n"+
+                                        "Descuento de Salud :"+descSalud+"\n"+
+                                        "Descuento Pension :"+descPension+"\n"+
+                                        "Salario :"+salarioNeto);
 
                 }
                     break;
                 case 4:
                     System.out.println("validar categoria de salario");
+                    if (salario<2600000){
+                        System.out.println("Sr."+userRegi+" eres categoria A");
+                        categoria = "A";
+                    }else if(salario>=2600000){
+                        System.out.println("Sr."+userRegi+" eres categoria B");
+                        categoria = "B";
+                    } else if (salario>=3900000) {
+                        System.out.println("Sr."+userRegi+" eres categoria C");
+                        categoria = "C";
+                    }
+                    System.out.flush();
                     break;
                 case 5:
                     System.out.println("ver datos de usuario");
+                    System.out.println(
+                            "Sr."+userRegi+"\n"+
+                            "salario :"+salarioNeto+"\n"+
+                            "Categoria :"+categoria);
                     break;
 
                 case 6:
