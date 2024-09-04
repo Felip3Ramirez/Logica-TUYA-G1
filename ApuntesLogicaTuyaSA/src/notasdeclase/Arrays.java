@@ -1,10 +1,20 @@
 package notasdeclase;
 
+import java.util.Scanner;
+
 public class Arrays {
     public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
 
-        int [] edades ={16,41,20,31,24};
+        int [] edades =new int[6];
+        int i =0;
 
+        while (i <= edades.length){
+            System.out.println(" Ingrese una edad :");
+            edades[i]= sc.nextInt();
 
+            i++;
+        }
+        System.out.println(edades[4]);
     }
 }
