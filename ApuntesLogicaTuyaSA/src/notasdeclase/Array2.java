@@ -13,12 +13,15 @@ public class Array2 {
             edades[i]= sc.nextInt();
             i++;
         }
-        System.out.println("Edades registradas :"+"\n"+
-                edades[0]+"\n"+
-                edades[1]+"\n"+
-                edades[2]+"\n"+
-                edades[3]+"\n"+
-                edades[4]+"\n");
+        //System.out.println("Edades registradas :"+"\n"+
+        //        edades[0]+"\n"+
+        //        edades[1]+"\n"+
+        //        edades[2]+"\n"+
+        //        edades[3]+"\n"+
+        //        edades[4]+"\n");
 
+        for (int o = 0;o< edades.length;o++){
+            System.out.println(edades[o]);
+        }
     }
 }
