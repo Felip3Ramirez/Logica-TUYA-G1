@@ -15,6 +15,10 @@ public class Arrays {
 
             i++;
         }
+        int promedio=0;
         System.out.println(edades[4]);
+        while (i <= edades.length){
+            promedio=
+        }
     }
 }
