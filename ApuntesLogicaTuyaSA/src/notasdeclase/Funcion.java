@@ -8,15 +8,15 @@ public class Funcion {
 
         String [] prendas = new String[5];
         String [] preferencias = new String[5];
-        guardarPrendas(prendas);
-        listarPrendas(prendas);
-        preferenciaPrendas(preferencias,prendas);
+
+        menu(preferencias,prendas);
+
     }
 
     public static void guardarPrendas(String[] prendas){
         for (int i= 0;i< prendas.length; i++) {
             System.out.println("Ingrese la prenda "+ (i+1));
-            prendas[i]= sc.nextLine();
+            prendas[i]= sc.next();
         }
     }
     public static void listarPrendas(String[] prendas){
@@ -27,14 +27,54 @@ public class Funcion {
     }
     public static void preferenciaPrendas(String[] preferencias,String [] prendas){
         for (int j=0;j< preferencias.length; j++) {
-            System.out.println("Especifica si te gusta esta prenda");
+            System.out.println("ESPECIFICA SI TE GUSTA ESTA PRENDA");
             System.out.println(prendas[j]);
-            preferencias[j] = sc.nextLine();
+            preferencias[j] = sc.next();
         }
+    }
+    public static void listaPreferencias(String[] preferencias, String [] prendas){
+        System.out.println("PREFERENCIA DE PRENDAS");
+        for (int j =0 ;j < preferencias.length; j++) {
+            System.out.println(prendas[j]+" : "+preferencias[j]);
+        }
+    }
+    public static void menu (String[] preferencias, String [] prendas){
+        int salir =0;
 
-            for (int j =0 ;j < preferencias.length; j++) {
-                System.out.println(prendas[j]+" : "+preferencias[j]);
+        while (salir!=5){
+            System.out.println("MENU DE PRENDAS Y PREFERENCIAS");
+            System.out.println("1. INGRESAR PRENDAS");
+            System.out.println("2. MOSTRAR PRENDAS");
+            System.out.println("3. INGRESAR PREFERENCIA DE PRENDA");
+            System.out.println("4. MOSTRAR PREFERENCIA DE PRENDA");
+            System.out.println("5. SALIR");
+            int opc = sc.nextInt();
+            switch (opc){
+                case 1:
+                    guardarPrendas(prendas);
+                    break;
+
+                case 2:
+                    listarPrendas(prendas);
+                    break;
+
+                case 3:
+                    preferenciaPrendas(preferencias,prendas);
+                    break;
+
+                case 4:
+                    listaPreferencias(preferencias,prendas);
+                    break;
+
+                case 5:
+                    salir = 5;
+                    break;
+
+                default:
+                    System.out.println("OPCION INVALIDA");
+                    break;
             }
+        }
 
     }
 }
