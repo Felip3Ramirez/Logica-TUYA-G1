@@ -15,10 +15,14 @@ public class Arrays {
 
             i++;
         }
-        int promedio=0;
-        System.out.println(edades[4]);
+        int promedio = 0;
+        int suma = 0;
+
         while (i <= edades.length){
-            promedio=
+            suma = suma + edades[i];
+            i++;
         }
+        promedio = suma / edades.length;
+        System.out.println("Promedio :"+promedio);
     }
 }
