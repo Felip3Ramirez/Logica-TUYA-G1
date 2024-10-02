@@ -34,9 +34,14 @@ public class RegistroCarros {
     public static void mostrarInfo(String [] carros,String [] placas,int [] modelo){
         for (int i =0;i<carros.length;i++){
             System.out.println("Auto de marca "+carros [i]+" con placas "+placas[i]+" del año "+modelo[i]);
-
         }
-
+        for (int i =0;i<modelo.length;i++){
+            if (modelo[i]<2020){
+                System.out.println("Modelos Viejos "+carros[i]);
+            } else if (modelo[i]>=2020){
+                System.out.println("Modelos Nuevos "+carros[i]);
+            }
+        }
     }
     public static void juego(){
         int numeroSecreto = random.nextInt(100) ;

@@ -2,7 +2,7 @@ package talleres;
 
 import java.util.Scanner;
 
-public class HotelProyecto {
+public class Hotel1 {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
 
